@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cadastre-se!</h1>
+
+</div>
+
+<form>
+     <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" placeholder="Digite o seu nome">
+     </div>
+
+     <div class="form-group">
+            <label for="celular">Celular</label>
+            <input type="text" class="form-control" placeholder="Digite o seu celular">
+     </div>
+
+     <div class="form-group">
+            <label for=nome>Conhecimentos</label>
+            <input type="text" class="form-control" placeholder="Informe os seus conhecimentos em tecnologia">
+      </div>   
+
+      <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu Email">
+            <small id="emailHelp" class="form-text text-muted">Suas informações pessoais estão seguras conosco</small>
+     </div>
+
+    <div class="form-group">
+            <label for="exampleInputPassword1">Senha</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite sua senha">
+    </div>
+
+<div class="block">
+
+    <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Python</label>
+     </div>
+
+    <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">C#</label>
+     </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+        <label class="form-check-label" for="inlineCheckbox3">Java</label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+        <label class="form-check-label" for="inlineCheckbox4">Kotlin</label>
+        </div>
+
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+        <label class="form-check-label" for="inlineCheckbox5">JavaScript</label>
+        </div>
+
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+        <label class="form-check-label" for="inlineCheckbox6">JavaScript</label>
+        </div>
+
+     </div>
+
+<br />
+
+      <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+      <a class="btn btn-secondary btn-block" asp-controller="Candidato" asp-action="Index" role="button">Voltar</a>
+
+
+</form>

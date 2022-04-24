@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Banco de Talentos";
+}
+
+
+    @if(TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success">
+            <button type="button"class="btn btn-danger close-alert" data-db-dismiss="alert" aria-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if(TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-success">
+            <button type="button"class="btn btn-danger close-alert" data-db-dismiss="alert" aria-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Banco de Talentos</h1>
+
+    <br />
+
+    <div class="text-center">
+        <div class="d-grid gap-2 d-md-flex justfy-content-md-start">
+            <a class="btn btn-success"role="button" asp-controller="Candidato" asp-action="Criar">Adicionar um novo Candidato</a>
+        </div>
+</div>
+
+
+<br />
+
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Conhecimentos</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <th scope="row">1</th>
+      <td>Melissa</td>
+      <td>teste@teste</td>
+      <td>Python</td>
+      <td>
+         <div class="btn-group" role="group" aria-label="Basic example">
+              <a role="button" class="btn btn-warning">Editar</a>
+              <a role="button" class="btn btn-secondary">Apagar</a>
+         </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Andre</td>
+      <td>teste@teste</td>
+      <td>JavaScript</td>
+      <td>
+           <div class="btn-group" role="group" aria-label="Basic example">
+              <a role="button" class="btn btn-warning">Editar</a>
+              <a role="button" class="btn btn-secondary">Apagar</a>
+         </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Jacob</td>
+      <td>teste@teste</td>
+      <td>Kotlin</td>
+      <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a role="button" class="btn btn-warning">Editar</a>
+              <a role="button" class="btn btn-secondary">Apagar</a>
+         </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Maria</td>
+      <td>teste@teste</td>
+      <td>c#</td>
+      <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+              <a role="button" class="btn btn-warning">Editar</a>
+              <a role="button" class="btn btn-secondary">Apagar</a>
+         </div>
+      </td>
+    </tr>
+  </tbody>
+</table> 
+</div>
