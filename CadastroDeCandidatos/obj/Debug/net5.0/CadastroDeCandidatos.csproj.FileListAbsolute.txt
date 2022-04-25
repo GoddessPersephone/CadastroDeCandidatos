@@ -356,6 +356,6 @@ C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidato
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\ref\CadastroDeCandidatos.dll
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Candidato\Index.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
-C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Candidato\Apagar.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Candidato\Criar.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Candidato\Editar.cshtml.g.cs
+C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Candidato\ApagarConfirmacao.cshtml.g.cs
