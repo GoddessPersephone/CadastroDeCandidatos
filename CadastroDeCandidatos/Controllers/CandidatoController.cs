@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CadastroDeCandidatos.Models;
+using CadastroDeCandidatos.Repositorio;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace CadastroDeCandidatos.Controllers
 {
     public class CandidatoController : Controller
     {
+        private readonly ICandidatoRepositorio _candidatoRepositorio;
+        public CandidatoController(ICandidatoRepositorio candidatoRepositorio)
+        {
+            _candidatoRepositorio = candidatoRepositorio;
+        }
         public IActionResult Index()
         {
-            return View();
+            List<CandidatoModel> candidato = _candidatoRepositorio.BuscarTodos();
+            return View(candidato);
         }
         public IActionResult Criar()
         {
@@ -20,6 +29,13 @@ namespace CadastroDeCandidatos.Controllers
         {
             return View();
         }
+        [HttpPost] //adicionando dados ao banco de dados
+        public IActionResult Criar(CandidatoModel candidato)
+        {
+            _candidatoRepositorio.Adicionar(candidato);
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

@@ -1,4 +1,5 @@
 using CadastroDeCandidatos.Data;
+using CadastroDeCandidatos.Repositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,7 @@ namespace CadastroDeCandidatos
             services.AddControllersWithViews();
             services.AddEntityFrameworkSqlServer()
             .AddDbContext<BancoContext>(o => o.UseSqlServer(Configuration.GetConnectionString("DataBase")));
+            services.AddScoped<ICandidatoRepositorio, CandidatoRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

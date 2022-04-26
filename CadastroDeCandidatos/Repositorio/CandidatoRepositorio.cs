@@ -1,5 +1,7 @@
 ﻿using CadastroDeCandidatos.Data;
 using CadastroDeCandidatos.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CadastroDeCandidatos.Repositorio
 {
@@ -11,11 +13,18 @@ namespace CadastroDeCandidatos.Repositorio
             _bancoContext = bancoContext;
 
         }
+        public List<CandidatoModel> BuscarTodos()
+        {
+            return _bancoContext.Candidato.ToList();
+        }
         public CandidatoModel Adicionar(CandidatoModel candidato)
         {
+            //gravando no banco de dados
             _bancoContext.Candidato.Add(candidato);
             _bancoContext.SaveChanges();
+
             return candidato;
         }
+
     }
 }
