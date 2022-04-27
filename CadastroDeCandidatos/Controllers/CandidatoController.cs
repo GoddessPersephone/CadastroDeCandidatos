@@ -21,9 +21,10 @@ namespace CadastroDeCandidatos.Controllers
         {
             return View();
         }
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            CandidatoModel candidato = _candidatoRepositorio.ListarPorId(id);
+            return View(candidato);
         }
         public IActionResult ApagarConfirmacao()
         {
@@ -31,6 +32,11 @@ namespace CadastroDeCandidatos.Controllers
         }
         [HttpPost] //adicionando dados ao banco de dados
         public IActionResult Criar(CandidatoModel candidato)
+        {
+            _candidatoRepositorio.Adicionar(candidato);
+            return RedirectToAction("Index");
+        }
+        public IActionResult Atualizar(CandidatoModel candidato)
         {
             _candidatoRepositorio.Adicionar(candidato);
             return RedirectToAction("Index");

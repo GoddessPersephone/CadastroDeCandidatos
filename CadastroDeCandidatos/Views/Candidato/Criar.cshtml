@@ -34,37 +34,9 @@
 
 <h3>Marque os Conhecimentos que possui</h3>
 
-<div class="block">
-
-    <div class="form-check">
-            <input class="form-check-input" asp-for="Conhecimento" type="checkbox" id="inlineCheckbox1" value="Python">
-            <label class="form-check-label" for="inlineCheckbox1">Python</label>
-     </div>
-
-    <div class="form-check">
-            <input class="form-check-input" asp-for="Conhecimento" type="checkbox" id="inlineCheckbox2" value="C#">
-            <label class="form-check-label" for="inlineCheckbox2">C#</label>
-     </div>
-
-    <div class="form-check">
-        <input class="form-check-input" asp-for="Conhecimento" type="checkbox" id="inlineCheckbox3" value="Java">
-        <label class="form-check-label" for="inlineCheckbox3">Java</label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" asp-for="Conhecimento" type="checkbox" id="inlineCheckbox4" value="Kotlin">
-        <label class="form-check-label" for="inlineCheckbox4">Kotlin</label>
-        </div>
-
-        <div class="form-check">
-        <input class="form-check-input" asp-for="Conhecimento" type="checkbox" id="inlineCheckbox5" value="JavaScript">
-        <label class="form-check-label" for="inlineCheckbox5">JavaScript</label>
-        </div>
-
-        <div class="form-check">
-        <input class="form-check-input" asp-for="Conhecimento" type="checkbox" id="inlineCheckbox6" value="Asp.NET">
-        <label class="form-check-label" for="inlineCheckbox6">Asp.NET</label>
-        </div>
-
+    <div class="form-group">
+            <label for="conhecimento">Conhecimentos</label>
+            <input type="text" asp-for="Conhecimento" class="form-control" placeholder="Informe os conhecimentos que voce possui:">
      </div>
 
 <br />

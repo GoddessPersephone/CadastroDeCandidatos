@@ -7,29 +7,47 @@ namespace CadastroDeCandidatos.Repositorio
 {
     public class CandidatoRepositorio : ICandidatoRepositorio
     {
-        private readonly BancoContext _bancoContext;
+        private readonly BancoContext _context;
       
 
         public CandidatoRepositorio(BancoContext bancoContext)
         {
-            _bancoContext = bancoContext;
+            this._context = bancoContext;
 
+        }
+        public CandidatoModel ListarPorId(int id)
+        {
+            return _context.Candidato.FirstOrDefault(x => x.Id == id);
         }
 
         public List<CandidatoModel> BuscarTodos()
         {
-            return _bancoContext.Candidato.ToList();
+            return _context.Candidato.ToList();
         }
       
         public CandidatoModel Adicionar(CandidatoModel candidato)
         {
             //gravando no banco de dados
             
-            _bancoContext.Candidato.Add(candidato);
-            _bancoContext.SaveChanges();
+            _context.Candidato.Add(candidato);
+            _context.SaveChanges();
 
             return candidato;
         }
 
+        public CandidatoModel Atualizar(CandidatoModel candidato)
+        {
+            CandidatoModel candidatoDB = ListarPorId(candidato.Id);
+            if (candidatoDB == null) throw new System.Exception("Houve um erro na atualização do cadastro!");
+            candidatoDB.Nome = candidato.Nome;
+            candidatoDB.Nome = candidato.Celular;
+            candidatoDB.Nome = candidato.Conhecimento;
+            candidatoDB.Nome = candidato.Email;
+            candidatoDB.Nome = candidato.Senha;
+
+            _context.Candidato.Update(candidatoDB);
+            _context.SaveChanges();
+            return candidatoDB;
+        }
     }
 }
