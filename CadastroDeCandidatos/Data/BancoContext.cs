@@ -15,7 +15,6 @@ namespace CadastroDeCandidatos.Data
         }
 
         public DbSet<CandidatoModel> Candidato { get; set; }
-        
 
     }
 
