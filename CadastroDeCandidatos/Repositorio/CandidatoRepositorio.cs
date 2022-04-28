@@ -40,10 +40,10 @@ namespace CadastroDeCandidatos.Repositorio
             if (candidatoDB == null) throw new System.Exception("Houve um erro na atualização do cadastro!");
 
             candidatoDB.Nome = candidato.Nome;
-            candidatoDB.Nome = candidato.Email;
-            candidatoDB.Nome = candidato.Conhecimento;
-            candidatoDB.Nome = candidato.Celular;
-            candidatoDB.Nome = candidato.Senha;
+            candidatoDB.Email = candidato.Email;
+            candidatoDB.Conhecimento = candidato.Conhecimento;
+            candidatoDB.Celular = candidato.Celular;
+            candidatoDB.Senha = candidato.Senha;
 
             _context.Candidato.Update(candidatoDB);
 
