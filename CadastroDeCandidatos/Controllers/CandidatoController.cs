@@ -36,9 +36,10 @@ namespace CadastroDeCandidatos.Controllers
             _candidatoRepositorio.Adicionar(candidato);
             return RedirectToAction("Index");
         }
-        public IActionResult Atualizar(CandidatoModel candidato)
+        [HttpPost]
+        public IActionResult Alterar(CandidatoModel candidato)
         {
-            _candidatoRepositorio.Adicionar(candidato);
+            _candidatoRepositorio.Atualizar(candidato);
             return RedirectToAction("Index");
         }
 

@@ -12,7 +12,7 @@ namespace CadastroDeCandidatos.Repositorio
 
         public CandidatoRepositorio(BancoContext bancoContext)
         {
-            this._context = bancoContext;
+            _context = bancoContext;
 
         }
         public CandidatoModel ListarPorId(int id)
@@ -31,7 +31,6 @@ namespace CadastroDeCandidatos.Repositorio
             
             _context.Candidato.Add(candidato);
             _context.SaveChanges();
-
             return candidato;
         }
 
@@ -39,14 +38,17 @@ namespace CadastroDeCandidatos.Repositorio
         {
             CandidatoModel candidatoDB = ListarPorId(candidato.Id);
             if (candidatoDB == null) throw new System.Exception("Houve um erro na atualização do cadastro!");
+
             candidatoDB.Nome = candidato.Nome;
-            candidatoDB.Nome = candidato.Celular;
-            candidatoDB.Nome = candidato.Conhecimento;
             candidatoDB.Nome = candidato.Email;
+            candidatoDB.Nome = candidato.Conhecimento;
+            candidatoDB.Nome = candidato.Celular;
             candidatoDB.Nome = candidato.Senha;
 
             _context.Candidato.Update(candidatoDB);
+
             _context.SaveChanges();
+
             return candidatoDB;
         }
     }
