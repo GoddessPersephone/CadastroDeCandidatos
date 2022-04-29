@@ -1,12 +1,13 @@
-﻿@{
+﻿@model CandidatoModel
+@{
     ViewData["Title"] = "Confirmação para Exclusão de Candidato";
 }
 <div class="text-center">
-    <h3 class="display-4">Deseja realmente Apagar os dados selecionados?</h3>
+    <h3 class="display-4">Deseja realmente Apagar os dados selecionados (@Model.Nome)?</h3>
 </div>
 
 <br />
 
 <a class="btn btn-info btn-block role="button" asp-controller="Candidato" asp-action="Index">Cancelar Exclusão</a>
-<a class="btn btn-danger btn-block role="button" asp-controller="Candidato" asp-action="Apagar">Confirmar Exclusão</a>
+<a class="btn btn-danger btn-block role="button" asp-route-id="@Model.Id" asp-controller="Candidato" asp-action="Apagar">Confirmar Exclusão</a>
 

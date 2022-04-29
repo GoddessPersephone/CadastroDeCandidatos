@@ -26,10 +26,18 @@ namespace CadastroDeCandidatos.Controllers
             CandidatoModel candidato = _candidatoRepositorio.ListarPorId(id);
             return View(candidato);
         }
-        public IActionResult ApagarConfirmacao()
+        public IActionResult ApagarConfirmacao(int id)
         {
-            return View();
+            CandidatoModel candidato = _candidatoRepositorio.ListarPorId(id);
+            return View(candidato);
         }
+
+        public IActionResult  Apagar(int id)
+        {
+            _candidatoRepositorio.Apgar(id);
+            return RedirectToAction("Index");
+        }
+
         [HttpPost] //adicionando dados ao banco de dados
         public IActionResult Criar(CandidatoModel candidato)
         {

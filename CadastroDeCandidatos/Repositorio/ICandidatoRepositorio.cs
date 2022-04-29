@@ -10,5 +10,6 @@ namespace CadastroDeCandidatos.Repositorio
         List<CandidatoModel> BuscarTodos();
         CandidatoModel Adicionar(CandidatoModel candidato);
         CandidatoModel Atualizar(CandidatoModel candidato);
+        bool Apgar(int id);
     }
 }

@@ -51,5 +51,17 @@ namespace CadastroDeCandidatos.Repositorio
 
             return candidatoDB;
         }
+
+        public bool Apgar(int id)
+        {
+            CandidatoModel candidatoDB = ListarPorId(id);
+
+            if (candidatoDB == null) throw new System.Exception("Houve um erro na exclusão do cadastro!");
+
+            _context.Candidato.Remove(candidatoDB);
+            _context.SaveChanges();
+
+            return true;
+        }
     }
 }
