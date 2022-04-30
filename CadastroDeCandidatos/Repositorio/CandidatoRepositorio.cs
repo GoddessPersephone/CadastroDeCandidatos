@@ -1,4 +1,5 @@
-﻿using CadastroDeCandidatos.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using CadastroDeCandidatos.Data;
 using CadastroDeCandidatos.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,6 @@ namespace CadastroDeCandidatos.Repositorio
             return _context.Candidato.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<CandidatoModel> BuscarTodos()
-        {
-            return _context.Candidato.ToList();
-        }
       
         public CandidatoModel Adicionar(CandidatoModel candidato)
         {
@@ -40,10 +37,10 @@ namespace CadastroDeCandidatos.Repositorio
             if (candidatoDB == null) throw new System.Exception("Houve um erro na atualização do cadastro!");
 
             candidatoDB.Nome = candidato.Nome;
-            candidatoDB.Email = candidato.Email;
-            candidatoDB.Conhecimento = candidato.Conhecimento;
             candidatoDB.Celular = candidato.Celular;
+            candidatoDB.Email = candidato.Email;
             candidatoDB.Senha = candidato.Senha;
+            candidatoDB.Conhecimento = candidato.Conhecimento;
 
             _context.Candidato.Update(candidatoDB);
 
@@ -62,6 +59,11 @@ namespace CadastroDeCandidatos.Repositorio
             _context.SaveChanges();
 
             return true;
+        }
+
+        List<CandidatoModel> ICandidatoRepositorio.BuscarTodos()
+        {
+            return _context.Candidato.ToList();
         }
     }
 }

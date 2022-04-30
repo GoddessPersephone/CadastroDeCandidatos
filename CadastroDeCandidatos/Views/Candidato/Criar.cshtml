@@ -12,12 +12,14 @@
 
      <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o seu nome">
+            <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o seu Nome">
+            @Html.ValidationMessageFor(x => x.Nome)
      </div>
 
      <div class="form-group">
             <label for="celular">Celular</label>
-            <input type="text" asp-for="Celular" class="form-control" placeholder="Digite o seu celular">
+            <input type="text" asp-for="Celular" class="form-control" placeholder="Digite o seu Celular">
+            @Html.ValidationMessageFor(x => x.Celular)
      </div>
 
       
@@ -25,11 +27,13 @@
             <label for="exampleInputEmail1">Email</label>
             <input type="email" asp-for="Email" class="form-control" aria-describedby="emailHelp" placeholder="Digite seu Email">
             <small id="emailHelp" asp-for="Email" class="form-text text-muted">Suas informações pessoais estão seguras conosco</small>
+            @Html.ValidationMessageFor(x => x.Email)
      </div>
 
     <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
-            <input type="password" asp-for="Senha"  class="form-control" placeholder="Digite sua senha">
+            <input type="password" asp-for="Senha"  class="form-control" placeholder="Digite sua Senha">
+            @Html.ValidationMessageFor(x => x.Senha)
     </div>
 
 <h3>Marque os Conhecimentos que possui</h3>
@@ -37,6 +41,7 @@
     <div class="form-group">
             <label for="conhecimento">Conhecimentos</label>
             <input type="text" asp-for="Conhecimento" class="form-control" placeholder="Informe os conhecimentos que voce possui:">
+            @Html.ValidationMessageFor(x => x.Conhecimento)
      </div>
 
 <br />

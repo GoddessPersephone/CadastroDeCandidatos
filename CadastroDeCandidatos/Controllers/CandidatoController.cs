@@ -1,4 +1,4 @@
-﻿using CadastroDeCandidatos.Models;
+﻿ using CadastroDeCandidatos.Models;
 using CadastroDeCandidatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -41,8 +41,14 @@ namespace CadastroDeCandidatos.Controllers
         [HttpPost] //adicionando dados ao banco de dados
         public IActionResult Criar(CandidatoModel candidato)
         {
-            _candidatoRepositorio.Adicionar(candidato);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _candidatoRepositorio.Adicionar(candidato);
+                return RedirectToAction("Index");
+            }
+
+            return View(candidato);
+
         }
         [HttpPost]
         public IActionResult Alterar(CandidatoModel candidato)
