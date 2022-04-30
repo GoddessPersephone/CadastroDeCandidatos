@@ -53,8 +53,13 @@ namespace CadastroDeCandidatos.Controllers
         [HttpPost]
         public IActionResult Alterar(CandidatoModel candidato)
         {
-            _candidatoRepositorio.Atualizar(candidato);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _candidatoRepositorio.Atualizar(candidato);
+                return RedirectToAction("Index");
+            }
+
+            return View("Editar",candidato);
         }
 
 
