@@ -41,25 +41,43 @@ namespace CadastroDeCandidatos.Controllers
         [HttpPost] //adicionando dados ao banco de dados
         public IActionResult Criar(CandidatoModel candidato)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _candidatoRepositorio.Adicionar(candidato);
+                if (ModelState.IsValid)
+                {
+                    _candidatoRepositorio.Adicionar(candidato);
+                    TempData["MensagemSucesso"] = "Candidato cadastrado com sucesso";
+                    return RedirectToAction("Index");
+                }
+
+                return View("Editar", candidato);
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Erro ao cadastrar candidato, tente novamente. Erro:{erro.Message}";
                 return RedirectToAction("Index");
             }
-
-            return View(candidato);
 
         }
         [HttpPost]
         public IActionResult Alterar(CandidatoModel candidato)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _candidatoRepositorio.Atualizar(candidato);
+                if (ModelState.IsValid)
+                {
+                    _candidatoRepositorio.Atualizar(candidato);
+                    TempData["MensagemSucesso"] = "Atualização de cadastrado efetuada com sucesso";
+                    return RedirectToAction("Index");
+                }
+
+                return View("Editar", candidato);
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Não foi possivel atualuizar este cadastro, tente novamente. Erro:{erro.Message}";
                 return RedirectToAction("Index");
             }
-
-            return View("Editar",candidato);
         }
 
 

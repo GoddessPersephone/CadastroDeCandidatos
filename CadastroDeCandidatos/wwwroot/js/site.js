@@ -39,10 +39,8 @@ function getDatatable(id) {
 
     },
 
-
-
-        $('.close-alert').click(function () {
-            $('.alert').hide('hide');
-        }
-        ));
+    $('.close-alert').click(function () {
+    $('.alert').hide('hide');
+    }
+    ));
 };
