@@ -37,19 +37,6 @@ namespace CadastroDeCandidatos.Migrations
                 oldType: "nvarchar(max)",
                 oldNullable: true);
 
-            migrationBuilder.AddColumn<string>(
-                name: "Celular",
-                table: "Candidato",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AddColumn<string>(
-                name: "Senha",
-                table: "Candidato",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
 
             migrationBuilder.CreateTable(
                 name: "Usuario",
