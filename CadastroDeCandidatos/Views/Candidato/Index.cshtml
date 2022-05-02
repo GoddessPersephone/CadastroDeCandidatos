@@ -37,7 +37,7 @@
 <br />
 
 
-    <table class="table">
+    <table id="table-candidato" class="display" style="width:100%">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -45,6 +45,7 @@
       <th scope="col">Celular</th>
       <th scope="col">Email</th>
       <th scope="col">Conhecimentos</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -68,6 +69,10 @@
                       </td> 
                   </tr>
                 }
+            }
+            else
+            {
+               <tr class="odd"><td valign="top" colspan="5">Nenhum candidato Encontrado</td></tr>    
             }
         </tbody>
 </table> 

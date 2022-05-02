@@ -36,9 +36,9 @@ namespace CadastroDeCandidatos.Controllers
         {
             try
             {
-               bool apagaado = _candidatoRepositorio.Apgar(id);
+               bool apagado = _candidatoRepositorio.Apgar(id);
 
-                if (apagaado)
+                if (apagado)
                 {
                     TempData["MensagemSucesso"] = "Cadastro apagado com sucesso!";
                 }

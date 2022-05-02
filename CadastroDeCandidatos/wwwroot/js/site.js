@@ -4,8 +4,8 @@
 // Write your JavaScript code.
 
 $(document).ready(function () {
-    getDatatable('#tabela-candidatos');
-    getDatatable('#tabela-usuario');
+    getDatatable('#table-candidato');
+    getDatatable('#table-usuario');
 
 });
 function getDatatable(id) {
