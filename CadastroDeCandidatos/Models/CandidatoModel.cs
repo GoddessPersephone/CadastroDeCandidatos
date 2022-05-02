@@ -11,6 +11,7 @@ namespace CadastroDeCandidatos.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Digite o nº Celular do Candidato")]
+        
         public string Celular { get; set; }
 
         [Required(ErrorMessage = "Digite um Email para o Candidato")]
