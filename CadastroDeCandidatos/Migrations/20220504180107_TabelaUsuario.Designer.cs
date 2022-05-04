@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CadastroDeCandidatos.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20220502135031_CriandoTabelaUsuario")]
-    partial class CriandoTabelaUsuario
+    [Migration("20220504180107_TabelaUsuario")]
+    partial class TabelaUsuario
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,6 +60,10 @@ namespace CadastroDeCandidatos.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Conhecimento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("DataAtualizacao")
                         .HasColumnType("datetime2");
 
@@ -67,18 +71,22 @@ namespace CadastroDeCandidatos.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Login")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Perfil")
                         .HasColumnType("int");
 
                     b.Property<string>("Senha")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

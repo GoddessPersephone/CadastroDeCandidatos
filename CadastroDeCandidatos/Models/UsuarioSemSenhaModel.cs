@@ -1,4 +1,4 @@
-﻿using CadastroDeCandidatos.Enuns;
+﻿using CadastroDeCandidatos.Enums;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -14,9 +14,13 @@ namespace CadastroDeCandidatos.Models
         [Required(ErrorMessage = "Digite o Login do Usuario")]
         public string Login { get; set; }
 
+        [Required(ErrorMessage = "Informe ao menos um Conhecimento para o Candidato")]
+        public string Conhecimento { get; set; }
+
         [Required(ErrorMessage = "Digite o Email do Usuario")]
         [EmailAddress(ErrorMessage = "Informe um email válido")]
         public string Email { get; set; }
+
         [Required(ErrorMessage = "Informe o Perfil do usuario")]
         public PerfilEnum? Perfil { get; set; }
         

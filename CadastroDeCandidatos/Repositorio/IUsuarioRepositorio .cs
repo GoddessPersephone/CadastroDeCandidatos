@@ -6,7 +6,8 @@ namespace CadastroDeCandidatos.Repositorio
 {
     public interface IUsuarioRepositorio
     {
-        UsuarioModel ListarPorId(int id);
+        UsuarioModel BuscarPorLogin(string login);
+        UsuarioModel BuscarPorId(int id);
         List<UsuarioModel> BuscarTodos();
         UsuarioModel Adicionar(UsuarioModel usuario);
         UsuarioModel Atualizar(UsuarioModel usuario);

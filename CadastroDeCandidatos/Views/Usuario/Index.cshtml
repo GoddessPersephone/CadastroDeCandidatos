@@ -1,4 +1,6 @@
-﻿@model List<UsuarioModel>
+﻿
+
+@model List<UsuarioModel>
 @{
     ViewData["Title"] = "Lista de Usuarios";
 }
@@ -7,7 +9,7 @@
 
 
 <div class="text-center">
-    <h1 class="display-4">Lista de Usuário</h1>
+    <h1 class="display-4">Lista de Usuários</h1>
 
     <br />
 
@@ -43,7 +45,9 @@
       <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Login</th>
+      <th scope="col">Conhecimento</th>
       <th scope="col">Email</th>
+      <th scope="col">Perfil</th>
       <th scope="col">Data de Cadastro</th>
       <th scope="col"></th>
 
@@ -60,7 +64,9 @@
                     <th scope="row">@usuario.Id</th>
                     <td>@usuario.Nome</td>
                     <td>@usuario.Login</td>
+                    <td>@usuario.Conhecimento</td>
                     <td>@usuario.Email</td>
+                     <td>@(usuario.Perfil == CadastroDeCandidatos.Enums.PerfilEnum.Admin?"Administrador" : "Padrão")</td>
                     <td>@usuario.DataCadastro</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">

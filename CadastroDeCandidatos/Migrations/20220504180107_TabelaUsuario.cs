@@ -1,15 +1,34 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CadastroDeCandidatos.Migrations
 {
-    public partial class CriandoTabelaUsuario : Migration
+    public partial class TabelaUsuario : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
+                name: "Senha",
+                table: "Usuario",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "",
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
                 name: "Nome",
-                table: "Candidato",
+                table: "Usuario",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "",
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Login",
+                table: "Usuario",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "",
@@ -19,7 +38,7 @@ namespace CadastroDeCandidatos.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Email",
-                table: "Candidato",
+                table: "Usuario",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "",
@@ -27,53 +46,39 @@ namespace CadastroDeCandidatos.Migrations
                 oldType: "nvarchar(max)",
                 oldNullable: true);
 
-            migrationBuilder.AlterColumn<string>(
+            migrationBuilder.AddColumn<string>(
                 name: "Conhecimento",
-                table: "Candidato",
+                table: "Usuario",
                 type: "nvarchar(max)",
                 nullable: false,
-                defaultValue: "",
-                oldClrType: typeof(string),
-                oldType: "nvarchar(max)",
-                oldNullable: true);
-
-
-            migrationBuilder.CreateTable(
-                name: "Usuario",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Login = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Senha = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Perfil = table.Column<int>(type: "int", nullable: false),
-                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Usuario", x => x.Id);
-                });
+                defaultValue: "");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Usuario");
-
             migrationBuilder.DropColumn(
-                name: "Celular",
-                table: "Candidato");
+                name: "Conhecimento",
+                table: "Usuario");
 
-            migrationBuilder.DropColumn(
+            migrationBuilder.AlterColumn<string>(
                 name: "Senha",
-                table: "Candidato");
+                table: "Usuario",
+                type: "nvarchar(max)",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)");
 
             migrationBuilder.AlterColumn<string>(
                 name: "Nome",
-                table: "Candidato",
+                table: "Usuario",
+                type: "nvarchar(max)",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Login",
+                table: "Usuario",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),
@@ -81,15 +86,7 @@ namespace CadastroDeCandidatos.Migrations
 
             migrationBuilder.AlterColumn<string>(
                 name: "Email",
-                table: "Candidato",
-                type: "nvarchar(max)",
-                nullable: true,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(max)");
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Conhecimento",
-                table: "Candidato",
+                table: "Usuario",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),

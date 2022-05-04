@@ -88,7 +88,7 @@ namespace CadastroDeCandidatos.Controllers
                 if (ModelState.IsValid)
                 {
                     _candidatoRepositorio.Atualizar(candidato);
-                    TempData["MensagemSucesso"] = "Atualização de cadastrado efetuada com sucesso!";
+                    TempData["MensagemSucesso"] = "Atualização de cadastro efetuada com sucesso!";
                     return RedirectToAction("Index");
                 }
 

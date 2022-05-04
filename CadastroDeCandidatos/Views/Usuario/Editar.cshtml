@@ -1,4 +1,4 @@
-﻿@using CadastroDeCandidatos.Enuns
+﻿@using CadastroDeCandidatos.Enums
 @model UsuarioModel
 @{
     ViewData["Title"] = "Editar Usuario";
@@ -32,6 +32,17 @@
                 @Html.ValidationMessageFor(x => x.Email)
      </div>
 
+     
+<h3>Marque os Conhecimentos que possui</h3>
+
+    <div class="form-group">
+            <label for="conhecimento">Conhecimentos</label>
+            <input type="text" asp-for="Conhecimento" class="form-control" placeholder="Informe os conhecimentos que voce possui:">
+            @Html.ValidationMessageFor(x => x.Conhecimento)
+     </div>
+
+<br />
+
      <div class="form-group">
            <label for="login">Perfil</label>            
            <select asp-for="Perfil" class="form-control">
@@ -45,7 +56,7 @@
 
 <br />
 
-      <button type="submit" class="btn btn-success btn-block">Editar</button>
+      <button type="submit" class="btn btn-success btn-block"asp-controller="Usuario" asp-action="Alterar">Editar</button>
       <a class="btn btn-secondary btn-block" asp-controller="Usuario" asp-action="Index" role="button">Voltar</a>
 
 

@@ -1,4 +1,5 @@
-﻿namespace CadastroDeCandidatos.Enuns
+﻿using CadastroDeCandidatos.Enums;
+namespace CadastroDeCandidatos.Enums
 {
     public enum PerfilEnum
     {

@@ -20,12 +20,12 @@ namespace CadastroDeCandidatos.Controllers
         }
         public IActionResult Editar(int id)
         {
-            UsuarioModel usuario = _usuarioRepositorio.ListarPorId(id);
+            UsuarioModel usuario = _usuarioRepositorio.BuscarPorId(id);
             return View(usuario);
         }
         public IActionResult ApagarConfirmacao(int id)
         {
-            UsuarioModel usuario = _usuarioRepositorio.ListarPorId(id);
+            UsuarioModel usuario = _usuarioRepositorio.BuscarPorId(id);
 
             return View(usuario);
         }
@@ -74,10 +74,40 @@ namespace CadastroDeCandidatos.Controllers
             }
             catch (System.Exception erro)
             {
-                TempData["MensagemErro"] = $"Erro ao cadastrar usuario, tente novamente. Erro:{erro.Message}";
+                TempData["MensagemErro"] = $"Erro ao cadastrar usuário, tente novamente. Erro:{erro.Message}";
                 return RedirectToAction("Index");
             }
 
+        }
+        public IActionResult Alterar(UsuarioSemSenhaModel usuarioSemSenhaModel)
+        {
+            try
+            {
+                UsuarioModel usuario = null;
+
+                if (ModelState.IsValid)
+                {
+                    usuario = new UsuarioModel()
+                    {
+                        Id = usuarioSemSenhaModel.Id,
+                        Nome = usuarioSemSenhaModel.Nome,
+                        Login = usuarioSemSenhaModel.Login,
+                        Email = usuarioSemSenhaModel.Email,
+                        Perfil = usuarioSemSenhaModel.Perfil
+                    };
+
+                    usuario = _usuarioRepositorio.Atualizar(usuario);
+                    TempData["MensagemSucesso"] = "Atualização de usuário efetuada com sucesso!";
+                    return RedirectToAction("Index");
+                }
+
+                return View("Editar", usuario);
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Não foi possivel atualuizar este usuário, tente novamente. Erro:  {erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
 
     }

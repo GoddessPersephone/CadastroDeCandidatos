@@ -17,7 +17,13 @@ namespace CadastroDeCandidatos.Repositorio
             _context = bancoContext;
 
         }
-        public UsuarioModel ListarPorId(int id)
+
+        public UsuarioModel BuscarPorLogin(string login)
+        {
+            return _context.Usuario.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+        }
+
+        public UsuarioModel BuscarPorId(int id)
         {
             return _context.Usuario.FirstOrDefault(x => x.Id == id);
         }
@@ -64,6 +70,11 @@ namespace CadastroDeCandidatos.Repositorio
         List<UsuarioModel> IUsuarioRepositorio.BuscarTodos()
         {
             return _context.Usuario.ToList();
+        }
+
+        public UsuarioModel ListarPorId(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

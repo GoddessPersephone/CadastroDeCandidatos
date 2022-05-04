@@ -1,4 +1,4 @@
-﻿@using CadastroDeCandidatos.Enuns
+﻿@using CadastroDeCandidatos.Enums
 @model UsuarioModel
 @{
     ViewData["Title"] = "Cadastrar novo Usuario";
@@ -30,6 +30,16 @@
             <small id="emailHelp" asp-for="Email" class="form-text text-muted">Suas informações pessoais estão seguras conosco</small>
             @Html.ValidationMessageFor(x => x.Email)
      </div>
+     
+<h3>Marque os Conhecimentos que possui</h3>
+
+    <div class="form-group">
+            <label for="conhecimento">Conhecimentos</label>
+            <input type="text" asp-for="Conhecimento" class="form-control" placeholder="Informe os conhecimentos que voce possui:">
+            @Html.ValidationMessageFor(x => x.Conhecimento)
+     </div>
+
+<br />
 
     <div class="form-group">
             <label for="exampleInputPassword1">Senha</label>
