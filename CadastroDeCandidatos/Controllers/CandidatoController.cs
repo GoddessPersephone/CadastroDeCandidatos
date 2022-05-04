@@ -29,6 +29,7 @@ namespace CadastroDeCandidatos.Controllers
         public IActionResult ApagarConfirmacao(int id)
         {
             CandidatoModel candidato = _candidatoRepositorio.ListarPorId(id);
+
             return View(candidato);
         }
         

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CadastroDeCandidatos.Models
 {
-    public class UsuarioModel
+    public class UsuarioSemSenhaModel
     {
         public int Id { get; set; }
 
@@ -17,12 +17,8 @@ namespace CadastroDeCandidatos.Models
         [Required(ErrorMessage = "Digite o Email do Usuario")]
         [EmailAddress(ErrorMessage = "Informe um email válido")]
         public string Email { get; set; }
-
-        [Required(ErrorMessage = "Digite a Senha do Usuario")]
-        public string Senha { get; set; }
         [Required(ErrorMessage = "Informe o Perfil do usuario")]
         public PerfilEnum? Perfil { get; set; }
-        public DateTime DataCadastro { get; set; }
-        public DateTime? DataAtualizacao { get; set; }
+        
     }
 }

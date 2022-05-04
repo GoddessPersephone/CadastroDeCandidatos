@@ -13,25 +13,25 @@
 
     <div class="text-center">
         <div class="d-grid gap-2 d-md-flex justfy-content-md-start">
-            <a class="btn btn-success"role="button" asp-controller="Candidato" asp-action="Criar">Adicionar um novo Usuário</a>
+            <a class="btn btn-success"role="button" asp-controller="Usuario" asp-action="Criar">Adicionar um novo Usuário</a>
         </div>
 </div>
 
-    @if(TempData["MensagemSucesso"] != null)
-    {
-       <div class="alert alert-info" role="alert">
-            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
-            @TempData["MensagemSucesso"]
-        </div>
-    }
+        @if(TempData["MensagemSucesso"] != null)
+        {
+            <div class="alert alert-info" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                @TempData["MensagemSucesso"]
+            </div>
+        }
 
-    @if(TempData["MensagemErro"] != null)
-    {
-      <div class="alert alert-danger" role="alert">
-            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
-            @TempData["MensagemErro"]
-        </div>
-    }
+        @if(TempData["MensagemErro"] != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                @TempData["MensagemErro"]
+            </div>
+        }
 
 
 <br />
@@ -45,6 +45,8 @@
       <th scope="col">Login</th>
       <th scope="col">Email</th>
       <th scope="col">Data de Cadastro</th>
+      <th scope="col"></th>
+
       
 
     </tr>
@@ -62,9 +64,9 @@
                     <td>@usuario.DataCadastro</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a role="button" class="btn btn-warning" asp-route-id="@usuario.Id" asp-controller="Candidato" 
+                            <a role="button" class="btn btn-warning" asp-route-id="@usuario.Id" asp-controller="Usuario" 
                             asp-action="Editar">Editar</a>
-                            <a role="button" class="btn btn-secondary" asp-route-id="@usuario.Id" asp-controller="Candidato"
+                            <a role="button" class="btn btn-secondary" asp-route-id="@usuario.Id" asp-controller="Usuario"
                             asp-action="ApagarConfirmacao">Apagar</a>
                         </div>
                     </td> 
