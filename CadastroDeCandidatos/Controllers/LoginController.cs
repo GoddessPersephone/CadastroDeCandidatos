@@ -1,4 +1,5 @@
-﻿using CadastroDeCandidatos.Models;
+﻿using CadastroDeCandidatos.Helper;
+using CadastroDeCandidatos.Models;
 using CadastroDeCandidatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,13 +9,20 @@ namespace CadastroDeCandidatos.Controllers
     public class LoginController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
-        public LoginController(IUsuarioRepositorio usuarioRepositorio)
+        private readonly ISessao _sessao;
+
+       public LoginController(IUsuarioRepositorio usuarioRepositorio, ISessao sessao)
         {
             _usuarioRepositorio = usuarioRepositorio;
+            _sessao = sessao;
         }
 
         public IActionResult Index()
         {
+            //se o usuario estiver logado, retornar para a home
+
+            if (_sessao.BuscarSessaoDoUsuario() != null) return RedirectToAction("Index", "Home");
+
             return View();
         }
 
@@ -32,6 +40,7 @@ namespace CadastroDeCandidatos.Controllers
                     {
                         if (usuario.SenhaValida(loginModel.Senha))
                         {
+                            _sessao.CriarSessaoDoUsuario(usuario);
                             return RedirectToAction("Index","Home");      
                         }
 
