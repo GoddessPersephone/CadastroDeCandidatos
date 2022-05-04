@@ -14,13 +14,8 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RH Grupo Services</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                @await Component.InvokeAsync("Menu");
+            <div class="container">          
+                @await Component.InvokeAsync("Menu")
             </div>
         </nav>
     </header>
@@ -32,7 +27,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - RH Grupo Services - <a asp-area="" asp-controller="Login" asp-action="Index">Entre!</a>
+            &copy; 2022 - RH Grupo Services
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

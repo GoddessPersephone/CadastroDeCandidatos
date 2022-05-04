@@ -394,4 +394,4 @@ C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidato
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Usuario\ApagarConfirmacao.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Usuario\Editar.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Shared\_LayoutDeslogado.cshtml.g.cs
-C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Shared\Componentes\Menu\Default.cshtml.g.cs
+C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Shared\Components\Menu\Default.cshtml.g.cs
