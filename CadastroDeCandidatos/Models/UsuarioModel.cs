@@ -20,7 +20,7 @@ namespace CadastroDeCandidatos.Models
 
         [Required(ErrorMessage = "Informe ao menos um Conhecimento para o Candidato")]
         public string Conhecimento { get; set; }
-
+        
         [Required(ErrorMessage = "Digite a Senha do Usuario")]
         public string Senha { get; set; }
         [Required(ErrorMessage = "Informe o Perfil do usuario")]

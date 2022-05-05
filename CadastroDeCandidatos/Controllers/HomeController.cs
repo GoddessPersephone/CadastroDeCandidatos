@@ -23,7 +23,7 @@ namespace CadastroDeCandidatos.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Vagas()
         {
             return View();
         }

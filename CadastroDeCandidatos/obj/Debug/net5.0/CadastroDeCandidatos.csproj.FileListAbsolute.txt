@@ -337,7 +337,6 @@ C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidato
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\CadastroDeCandidatos.TagHelpers.output.cache
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\CadastroDeCandidatos.RazorCoreGenerate.cache
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -395,3 +394,4 @@ C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidato
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Usuario\Editar.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Shared\_LayoutDeslogado.cshtml.g.cs
 C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Shared\Components\Menu\Default.cshtml.g.cs
+C:\Users\Lara\OneDrive\Documentos\Prova\CadastroDeCandidatos\CadastroDeCandidatos\obj\Debug\net5.0\Razor\Views\Home\Vagas.cshtml.g.cs

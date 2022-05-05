@@ -58,6 +58,7 @@ namespace CadastroDeCandidatos.Controllers
         {
             return View();
         }
+        
         [HttpPost] //adicionando dados ao banco de dados
         public IActionResult Criar(UsuarioModel usuario)
         {
@@ -79,6 +80,7 @@ namespace CadastroDeCandidatos.Controllers
             }
 
         }
+        
         public IActionResult Alterar(UsuarioSemSenhaModel usuarioSemSenhaModel)
         {
             try

@@ -8,16 +8,21 @@
     </button>
 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
     <ul class="navbar-nav flex-grow-1">                       
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Candidato" asp-action="Index">Banco de Talentos</a>
-            </li>
         
         @if (Model.Perfil == CadastroDeCandidatos.Enums.PerfilEnum.Admin)
         {
             <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Index">Usuários</a>
         </li>  
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Candidato" asp-action="Index">Banco de Talentos</a>
+            </li>
         }
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Vagas">Banco de Vagas</a>
+        </li>
 
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Sair">Encerrar Sessão</a>
