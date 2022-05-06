@@ -4,10 +4,12 @@ using CadastroDeCandidatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
+
 namespace CadastroDeCandidatos.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly ILoginUsuarioRepositorio _loginRepositorio;
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         private readonly ISessao _sessao;
 
@@ -68,7 +70,33 @@ namespace CadastroDeCandidatos.Controllers
                 return RedirectToAction("Index");
             }
         }
-      
+        public IActionResult Criar()
+        {
+            return View();
+        }
+
+        [HttpPost] //adicionando dados ao banco de dados
+        public IActionResult Criar(LoginModel usuario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _loginRepositorio.Adicionar(usuario);
+                    TempData["MensagemSucesso"] = "Usuário cadastrado com sucesso!";
+                    return RedirectToAction("Index");
+                }
+
+                return View("Login", usuario);
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Erro ao cadastrar usuário, tente novamente. Erro:{erro.Message}";
+                return RedirectToAction("Index");
+            }
+
+        }
+
 
     }
 

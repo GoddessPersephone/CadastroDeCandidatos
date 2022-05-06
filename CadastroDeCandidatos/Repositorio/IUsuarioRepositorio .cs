@@ -12,5 +12,6 @@ namespace CadastroDeCandidatos.Repositorio
         UsuarioModel Adicionar(UsuarioModel usuario);
         UsuarioModel Atualizar(UsuarioModel usuario);
         bool Apgar(int id);
+        
     }
 }

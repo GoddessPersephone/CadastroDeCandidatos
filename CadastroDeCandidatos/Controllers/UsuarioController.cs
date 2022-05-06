@@ -1,10 +1,12 @@
-﻿using CadastroDeCandidatos.Models;
+﻿using CadastroDeCandidatos.Filters;
+using CadastroDeCandidatos.Models;
 using CadastroDeCandidatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace CadastroDeCandidatos.Controllers
 {
+    [PgUsuarioLogado]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;

@@ -76,5 +76,7 @@ namespace CadastroDeCandidatos.Repositorio
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
