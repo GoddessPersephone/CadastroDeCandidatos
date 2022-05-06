@@ -27,6 +27,14 @@ namespace CadastroDeCandidatos.Repositorio
             return usuario;
         }
 
-       
+        public void Adicionar(LoginUsuarioRepositorio usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void Adicionar(UsuarioRepositorio usuario)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

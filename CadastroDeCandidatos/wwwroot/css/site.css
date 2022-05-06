@@ -130,11 +130,23 @@ form input[type="submit"] {
     border-radius: 4px;
     transition: all 0.3s ease;
 }
+form button [type="submit"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    background: linear-gradient(to left,#4776E6,#8e54e9);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 5px;
+    background: linear-gradient(to right,#4776E6,#8e54e9);
+}
 
 form input[type="submit"]:hover {
-        letter-spacing: 5px;
-        background: linear-gradient(to right,#4776E6,#8e54e9);
-    }
+    letter-spacing: 5px;
+    background: linear-gradient(to right,#4776E6,#8e54e9);
+}
 .field-validation-error{
     color: #ef0a0a;
 }

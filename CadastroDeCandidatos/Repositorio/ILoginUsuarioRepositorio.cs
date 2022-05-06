@@ -9,7 +9,6 @@ namespace CadastroDeCandidatos.Repositorio
    
        
         LoginModel Adicionar(LoginModel usuario);
-       
-        
+        void Adicionar(LoginUsuarioRepositorio usuario);
     }
 }

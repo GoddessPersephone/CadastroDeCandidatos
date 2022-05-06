@@ -72,11 +72,8 @@ namespace CadastroDeCandidatos.Repositorio
             return _context.Usuario.ToList();
         }
 
-        public UsuarioModel ListarPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public UsuarioModel ListarPorId(int id) => _context.Usuario.ToList();
 
-        
+        return true;
     }
 }

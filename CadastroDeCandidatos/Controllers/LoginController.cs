@@ -10,6 +10,12 @@ namespace CadastroDeCandidatos.Controllers
     public class LoginController : Controller
     {
         private readonly ILoginUsuarioRepositorio _loginRepositorio;
+
+        public LoginController(ILoginUsuarioRepositorio loginRepositorio)
+        {
+            _loginRepositorio = loginRepositorio;
+        }
+
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         private readonly ISessao _sessao;
 
@@ -72,22 +78,23 @@ namespace CadastroDeCandidatos.Controllers
         }
         public IActionResult Criar()
         {
-            return View();
+            return View(_loginRepositorio);
+
         }
 
         [HttpPost] //adicionando dados ao banco de dados
-        public IActionResult Criar(LoginModel usuario)
+        public IActionResult Criar(LoginUsuarioRepositorio log, LoginUsuarioRepositorio loginUsuarioRepositorio)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _loginRepositorio.Adicionar(usuario);
+                    loginUsuarioRepositorio.Adicionar(log);
                     TempData["MensagemSucesso"] = "Usuário cadastrado com sucesso!";
                     return RedirectToAction("Index");
                 }
 
-                return View("Login", usuario);
+                return View("Login", log);
             }
             catch (System.Exception erro)
             {
